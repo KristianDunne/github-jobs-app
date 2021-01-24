@@ -13,6 +13,9 @@ module.exports = {
         'dark-grey': '#6E8098',
       },
     },
+    fontFamily: {
+      sans: 'Kumbh Sans, sans-serif',
+    },
   },
   variants: {
     extend: {},

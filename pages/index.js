@@ -1,4 +1,5 @@
 import Head from 'next/head';
+require('typeface-kumbh-sans');
 
 export default function Home() {
   return (
