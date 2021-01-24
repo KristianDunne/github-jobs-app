@@ -12,6 +12,12 @@ module.exports = {
         gray: '#9DAEC2',
         'dark-grey': '#6E8098',
       },
+      height: {
+        'header-mobile': '136px',
+      },
+      backgroundImage: (theme) => ({
+        'header-mobile': "url('/images/bg-header-mobile.svg')",
+      }),
     },
     fontFamily: {
       sans: 'Kumbh Sans, sans-serif',
