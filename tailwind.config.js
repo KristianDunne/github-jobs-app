@@ -14,9 +14,11 @@ module.exports = {
       },
       height: {
         'header-mobile': '136px',
+        'header-tablet': '160px',
       },
       backgroundImage: (theme) => ({
         'header-mobile': "url('/images/bg-header-mobile.svg')",
+        'header-tablet': "url('/images/bg-header-tablet.svg')",
       }),
     },
     fontFamily: {
