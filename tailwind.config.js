@@ -11,6 +11,7 @@ module.exports = {
         'light-grey': '#F4F6F8',
         gray: '#9DAEC2',
         'dark-grey': '#6E8098',
+        grey: '#F2F2F2',
       },
       height: {
         'header-mobile': '136px',
