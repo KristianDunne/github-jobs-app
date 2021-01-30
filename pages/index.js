@@ -1,22 +1,23 @@
 import Head from 'next/head';
 require('typeface-kumbh-sans');
-import useSWR from 'swr';
-import JobCard from '../components/shared/jobCard';
-
-const fetcher = (...args) => fetch(...args).then((res) => res.json());
+import { useState } from 'react';
+import Positions from '../components/feature/jobs/positions';
 
 export default function Home() {
-  const jobsAPI = 'https://jsonp.afeld.me/?url=https://jobs.github.com/positions.json';
-  const { data, error } = useSWR(jobsAPI, fetcher);
+  const [pageIndex, setPageIndex] = useState(2);
+  const pages = [<Positions page={1} key={1} />];
+
+  for (let i = 2; i < pageIndex; i++) {
+    pages.push(<Positions page={i} key={i} />);
+  }
+
   return (
     <div>
       <Head>
         <title>devjobs</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="px-6 top-24">
-        {data ? data.map((job) => <JobCard key={job.id} job={job}></JobCard>) : null}
-      </div>
+      <div className="px-6 top-24">{pages}</div>
     </div>
   );
 }
