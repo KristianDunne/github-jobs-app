@@ -17,7 +17,14 @@ export default function Home() {
         <title>devjobs</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="px-6 top-24">{pages}</div>
+      <div className="flex flex-col items-center mb-16">
+        <div className="px-6 top-24 ">{pages}</div>
+        <button
+          className="w-32 py-4 mt-8 font-bold leading-4 text-white rounded-md bg-violet"
+          onClick={() => setPageIndex(pageIndex + 1)}>
+          Load More
+        </button>
+      </div>
     </div>
   );
 }
