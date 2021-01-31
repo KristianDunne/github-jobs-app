@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
 import useSWR from 'swr';
+import Link from 'next/link';
 import CompanyCard from '../../components/feature/jobs/jobInfo/companyCard';
 import DescriptionCard from '../../components/feature/jobs/jobInfo/descriptionCard';
 import ApplyCard from '../../components/feature/jobs/jobInfo/applyCard';
@@ -20,11 +21,20 @@ export default function Post() {
     );
   }
 
+  const howToApplyLink = data.how_to_apply.match('<a[^>]+href="(.*?)"[^>]*>(.*?)</a>')[1];
+
   return (
     <>
       <CompanyCard job={data}></CompanyCard>
       <DescriptionCard job={data}></DescriptionCard>
       <ApplyCard job={data}></ApplyCard>
+      <div className="p-6 mt-10 bg-white">
+        <Link href={howToApplyLink}>
+          <button className="w-full py-4 font-bold leading-4 text-white rounded-md bg-violet">
+            Apply Now
+          </button>
+        </Link>
+      </div>
     </>
   );
 }
