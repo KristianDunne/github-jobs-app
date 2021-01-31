@@ -18,10 +18,14 @@ module.exports = {
         'header-tablet': '160px',
         'header-desktop': '160px',
       },
+      minHeight: {
+        'applycard-mobile': '372px',
+      },
       backgroundImage: (theme) => ({
         'header-mobile': "url('/images/bg-header-mobile.svg')",
         'header-tablet': "url('/images/bg-header-tablet.svg')",
         'header-desktop': "url('/images/bg-header-desktop.svg')",
+        'applycard-mobile': "url('/images/bg-applycard-mobile.svg')",
       }),
     },
     fontFamily: {

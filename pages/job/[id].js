@@ -2,6 +2,7 @@ import { useRouter } from 'next/router';
 import useSWR from 'swr';
 import CompanyCard from '../../components/feature/jobs/jobInfo/companyCard';
 import DescriptionCard from '../../components/feature/jobs/jobInfo/descriptionCard';
+import ApplyCard from '../../components/feature/jobs/jobInfo/applyCard';
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
@@ -23,6 +24,7 @@ export default function Post() {
     <>
       <CompanyCard job={data}></CompanyCard>
       <DescriptionCard job={data}></DescriptionCard>
+      <ApplyCard job={data}></ApplyCard>
     </>
   );
 }
